@@ -3,9 +3,7 @@ image:
 
 vscode:
   extensions:
-    - twxs.cmake@0.0.17:aQNzlYa74rJFJ5/BnUF1yA==
     - ms-vscode.cpptools@1.1.0-insiders2:ewjLo4MUP0CjrimwKlYsBg==
-    - vscode.git@1.50.1:S0KarvWz6ZFL4AdbL2dOuA==
-    - vscode.git-ui@1.50.1:9+QhAj/UODfd1tojDyga2A==
     - hansec.fortran-ls@0.6.2:lG2VHpMxRQoC1jys0VI0yA==
     - VisualStudioExptTeam.vscodeintellicode@1.2.2:VyaPhtK5JDcrioOPwlZlsw==
+    - krvajalm.linter-gfortran@2.2.1:9CJIQJ84TaIZY3KC4zm+lQ==
