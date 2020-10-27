@@ -1,0 +1,59 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "clean",
+            "type": "shell",
+            "group": "build",
+            "command": "rm",
+            "args": [
+                "*.mod",
+                 "a.out"
+                 ],
+            "problemMatcher": []
+        },
+        {
+            "label": "compile",
+            "type": "shell",
+            "group": "build",
+            "command": "gfortran",
+            "args": [
+                "-g",
+                "-Og",
+                "-Wall",
+                "-Wextra",
+                "toto_mod.f90",
+                "main.f90"
+                ],
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "clean & compile",
+            "type": "shell",
+            "group": "build",
+            "command": "echo",
+            "dependsOn": ["clean", "compile"],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "execute",
+            "type": "shell",
+            "group": "test",
+            "command": "./a.out",
+            "problemMatcher": []
+        },
+        {
+            "label": "compile & execute",
+            "type": "shell",
+            "group": "test",
+            "command": "echo",
+            "dependsOn": ["clean & compile", "execute"],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        }
+              
+    ]
+}

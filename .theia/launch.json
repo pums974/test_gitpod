@@ -1,14 +1,52 @@
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(gdb) Fortran",
             "type": "cppdbg",
             "request": "launch",
-            "name": "Launch Program",
+            "cwd": "${workspaceFolder}",
+            "environment": [],
             "program": "${workspaceFolder}/a.out",
-            "cwd": "${workspaceFolder}"
-        }
+            "args": [], // Possible input args for a.out
+            "preLaunchTask": "clean & compile",
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) valgrind Fortran",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "program": "${workspaceFolder}/a.out",
+            "preLaunchTask": "clean & compile",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Attach to valgrind",
+                    "text": "target remote | /usr/lib64/valgrind/../../bin/vgdb",
+                    "ignoreFailures": false
+                }
+            ],
+            "stopAtEntry": false,
+            "externalConsole": false,
+            "MIMode": "gdb"
+        },
     ]
 }

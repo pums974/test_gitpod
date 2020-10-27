@@ -1,0 +1,28 @@
+{
+    "workbench.iconTheme": "theia-file-icons",
+    "editor.minimap.enabled": true,
+    "fortran.provideCompletion": false,
+    "fortran.provideHover": false,
+    "fortran.provideSymbols": false,
+    "fortran-ls.maxCommentLineLength": 120,
+    "fortran-ls.maxLineLength": 120,
+    "fortran.linterExtraArgs": [
+        "-Wall",
+        "-fall-intrinsics",
+        "-fimplicit-none",
+        "-Og",
+        "-Wextra",
+        "-Wuninitialized",
+        "-Wuse-without-only",
+        "-Wno-lto-type-mismatch",
+        "-Wno-unused",
+        "-Wno-unused-parameter",
+        "-Wno-unused-dummy-argument"
+    ],
+    "fortran.symbols": [
+        "function",
+        "subroutine",
+        "variable"
+    ],
+    "fortran-ls.displayVerWarning": false
+}
